@@ -165,11 +165,11 @@ brew link --overwrite azure-functions-core-tools@3
 
    <img src="images/python_function_uploaded_to_azure_function_via_cli.png" alt = Add HelloWithPython Code>
    
-
+## Clean Up
 1. Azure does not allow you edit/delete python functions via the console.  
    Destroy the stack:  `pulumi destroy -y` 
 
-   and update the ```__main__.py``` to external URL.   
+1. Update the ```__main__.py``` to external URL.   
    ```
    app = web.WebApp("functionapp", 
    ...
@@ -179,4 +179,4 @@ brew link --overwrite azure-functions-core-tools@3
    ..
       )
    ``` 
-1. Return back to your original steps.
+1. Return back to your original steps to continue.
