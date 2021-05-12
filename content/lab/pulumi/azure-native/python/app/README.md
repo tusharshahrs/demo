@@ -125,8 +125,26 @@ brew link --overwrite azure-functions-core-tools@3
    ```
       __init__.py  function.json
    ```
+
+1. Change the `anonymous` user in the **`function.json`** 
    
-   The **`__init__.py__`* is the file where your python code that you want.  
+   This is because `Unless the HTTP access level on an HTTP triggered function is set to anonymous, requests must include an API access key in the request` as per
+   [Function access keys](https://docs.microsoft.com/en-us/azure/azure-functions/security-concepts#function-access-keys).
+   
+   Before: 
+   ```
+   "authLevel": "function",
+
+   ```
+   
+   After
+   ```
+   "authLevel": "anonymous",
+
+   ```
+
+1. Update the **`__init__.py__`** (Optional)
+   This the file where your python code that you want.  
    You can keep what you have.  We changed ours to simplify the output to
    ```
      import logging
@@ -136,6 +154,8 @@ brew link --overwrite azure-functions-core-tools@3
          logging.info('Python HTTP trigger function processed a request.')
          return func.HttpResponse(f"Hello from Python in Pulumi! You have stood up a serverless function in Azure!")
    ```
+
+
 ## Deploy your code to Azure via azure cli
 
 1. You need the function name.  The name doesn't exist yet
