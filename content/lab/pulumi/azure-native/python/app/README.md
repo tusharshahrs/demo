@@ -3,6 +3,7 @@
 
 Use command-line tools to create a Python function that responds to HTTP requests. 
 After testing the code locally, you deploy it to the serverless environment of Azure Functions.
+This is informational. You can skip this entire thing if you already have working `python code`.
 
 # Why do this step?
 To make sure that you build a function that works
@@ -111,7 +112,7 @@ brew link --overwrite azure-functions-core-tools@3
 
 1. Verify that the function and all the files were created.
 
-   `app#> ls`
+   `azure-function-workshop/app#> ls`
 
    ```
     HelloWorld(This is a directory)  host.json  local.settings.json  requirements.txt
@@ -119,7 +120,7 @@ brew link --overwrite azure-functions-core-tools@3
 
    `cd HelloWorld`
 
-   `app/HelloWorld#>ls -a`
+   `azure-function-workshop/app/HelloWorld#>ls -a`
    
    ```
       __init__.py  function.json
@@ -158,7 +159,7 @@ brew link --overwrite azure-functions-core-tools@3
 
 1. To publish your Functions project into Azure, enter the following command:
 
-   `func azure functionapp publish` **functionappe7f5313d**
+   `azure-function-workshop/app#> func azure functionapp publish` **functionappe7f5313d**
 
 1. Check the azure console and view that the python code shows up inside he.
 
@@ -178,4 +179,4 @@ brew link --overwrite azure-functions-core-tools@3
    ..
       )
    ``` 
-1. Return back to your original code block
+1. Return back to your original steps.
