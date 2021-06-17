@@ -1,16 +1,9 @@
-module.exports = async function (context, req) {
-    context.log('TypeScript HTTP trigger function processed a request.');
-
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello from Node.js, " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
+module.exports = async function (context) {
+  return {
+    status: 200,
+    body: "You've successfully deployed a Function App!",
+    headers: {
+      "content-type": "text/html",
+    },
+  };
 };
