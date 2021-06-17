@@ -2,7 +2,7 @@
 
 Use command-line tools to create a Typescript function that responds to HTTP requests. 
 After testing the code locally, you deploy it to the serverless environment of Azure Functions.
-This is informational. You can skip this entire thing if you already have working `typescript code`.
+This is informational. You can skip this entire thing if you already have working `typescript code`, i.e. the `app.zip`.
 
 # Why do this step?
 To make sure that you build a function that works
